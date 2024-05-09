@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Dream House</title>
+
+		<!-- Loading third party fonts -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="{{ url_for('static', filename = 'fonts/font-awesome.min.css' ) }}" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+		
+
+		<script src="{{ url_for('static', filename = 'js/ie-support/html5.js') }}"></script>
+		<script src="{{ url_for('static', filename = 'js/ie-support/respond.js') }}"></script>
+		
+
+	</head>
+
+
+	<body>
+		
+		<div class="site-content">
+			<header class="site-header" data-bg-image="{{ url_for('static', filename = 'images/wp4110660-real-estate-wallpapers.jpg') }}">
+				<div class="container">
+					<a href="#" class="branding">
+						<img src="{{ url_for('static', filename = 'images/Logo.png') }}" alt="Apartments">
+						<h1 class="site-title">Apartments</h1>
+						<small class="site-description">Live better</small>
+					</a>
+				</div>
+				<div class="banner" >
+					<div class="banner-content">
+						<div class="container">
+						    <div class="cta">
+								<a href="#">
+									<a href="#" class="arrow-button"><i class="fa fa-angle-right"></i></a>
+									<h2>Find best house for your</h2>
+									<small>Move to What Moves You,Where Dreams Come Home</small>
+								</a>
+							</div>
+
+							<div class="subscribe-form">
+								<form action="{{url_for('predict_home_price')}}" method="post">
+									<small class="form-subtitle">Start to live in Your</small>
+									<h2 class="form-title">New Apartment</h2>
+									<p>Where Dreams Come Home.  Your Gateway to a Richer Life. Be Home</p>
+
+									<div class="control">
+										<input type="text" placeholder="Total sqft..." name = "total_sqft">
+										<i class="fa fa-building-o" ></i>
+									</div>
+									<div class="control">
+										<input type="text" placeholder="Location..." name = "location">
+										<i class="fa fa-location-arrow"></i>
+									</div>
+									<div class="control">
+										<input type="text" placeholder="BHK..."name = "bhk">
+										<i class="fa fa-bed"></i>
+									</div>
+									<div class="control">
+										<input type="text" placeholder="Bath..." name = "bath">
+										<i class="fa fa-shower"></i>
+									</div>
+									<div class="control">
+										 <input type="text" placeholder="Pricted price" value="{{predicted_price}}" readonly="readonly">
+										<i class="fa fa-inr" ></i>
+									</div>
+									<input type="submit" value="Predict price">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</header> <!-- .site-header -->
+
+			<main class="main-content">
+				<div class="fullwidth-block">
+					<div class="container">
+						<h2 class="section-title">What is so great in our apartments?</h2>
+						<div class="row">
+							<div class="col-md-5">
+								<ul class="arrow-list">
+									<li>Let us Guide you Home</li>
+									<li>Funcity for kids</li>
+									<li>You can also carry your pets</li>
+									<li>Swimming pool for adults or kids</li>
+									<li>Best maintenance</li>
+									<li>Full-Service Agents, Modern Technology</li>
+								</ul>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="fullwidth-block" data-bg-color="#f0f0f0">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3 col-sm-6">
+								<div class="feature">
+									<div class="feature-icon"><img src="images/icon-location - Copy.png" alt=""></div>
+									<h3 class="feature-title">Perfect location</h3>
+									<p>Locations with good growth potential.</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="feature">
+									<div class="feature-icon"><img src="images/download.jpg" alt=""></div>
+									<h3 class="feature-title">CONTACT</h3>
+									<p>no +728273827328</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="feature">
+									<div class="feature-icon"><img src="images/icon-valet.png" alt=""></div>
+									<h3 class="feature-title">Free Maintenance</h3>
+									<p>There is free service</p>
+									<p>provided by over company </p>
+									 <p> to clean your house or flat</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="feature">
+									<div class="feature-icon"><img src="images/icon-phone.png" alt=""></div>
+									<h3 class="feature-title">24/h help</h3>
+									<p>For anything you .</p>
+									<p>over staff has always</p> 
+									<p>free to help you</p>
+								</div>
+							</div>
+						</div>	
+					</div>	
+				</div>
+				</div>
+			</main>
+
+			<footer class="site-footer">
+				<div class="container">
+					<p>Copyright 2022 Company Coders Designed by Team.... All rights reserved</p>
+					<div class="social-links">
+						<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+						<a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script src="{{ url_for('static', filename = 'js/jquery-1.11.1.min.js') }}"></script>
+		<script src="{{ url_for('static', filename = 'js/plugins.js') }}"></script>
+		<script src="{{ url_for('static', filename = 'js/app.js') }}"></script>
+		
+	</body>
+
+</html>
